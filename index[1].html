@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise For You 💗</title>
+<style>
+:root{--pink:#ff6f9f;--rose:#ffabc6;--cream:#fff8f5;--ink:#553744;--lav:#eee6ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:linear-gradient(145deg,#fff8f5,#ffeaf2 48%,#f2edff);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.hero{min-height:100svh;display:grid;place-items:center;padding:28px 18px;position:relative;overflow:hidden}
+.glow{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;pointer-events:none}
+.glow.one{width:260px;height:260px;background:#ffc9dc;top:-70px;left:-80px}
+.glow.two{width:300px;height:300px;background:#dcd0ff;bottom:-100px;right:-90px}
+.card{position:relative;width:min(680px,100%);text-align:center;padding:clamp(26px,6vw,56px) clamp(20px,5vw,48px);border:1px solid #fff9;border-radius:32px;background:#ffffffb8;box-shadow:0 24px 80px #c36a8c20;backdrop-filter:blur(14px)}
+.eyebrow{display:inline-block;background:#fff0f5;border:1px solid #ffd2e0;border-radius:999px;padding:8px 14px;font-size:.83rem;letter-spacing:.04em}
+h1{font-size:clamp(2.5rem,8vw,5rem);line-height:1.02;letter-spacing:-.06em;margin:22px 0 16px}
+h1 span{color:var(--pink)}
+.subtitle{max-width:470px;margin:0 auto;color:#866876;line-height:1.75;font-size:1.04rem}
+.primary{border:0;border-radius:999px;padding:15px 23px;background:linear-gradient(120deg,#ff6f9f,#ff91ad);color:white;font-weight:800;box-shadow:0 10px 24px #ff6f9f42;transition:transform .2s,box-shadow .2s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px #ff6f9f55}
+.hero .primary{margin-top:27px}
+.tiny{font-size:.8rem;color:#a18190;margin-top:15px}
+.floating{position:absolute;animation:float 5s ease-in-out infinite;opacity:.72;pointer-events:none}
+.f1{left:10%;top:22%;font-size:28px}.f2{right:12%;top:25%;font-size:24px;animation-delay:1s}.f3{left:17%;bottom:18%;font-size:22px;animation-delay:2s}.f4{right:16%;bottom:15%;font-size:30px;animation-delay:.6s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(7deg)}}
+section{padding:72px 18px}
+.wrap{width:min(940px,100%);margin:auto}
+.section-tag{text-align:center;color:#e35f8c;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+h2{text-align:center;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.045em;margin:12px 0 14px}
+.lead{text-align:center;color:#866876;line-height:1.75;max-width:590px;margin:0 auto 32px}
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.memory{min-height:190px;padding:23px;border-radius:24px;background:#ffffffb8;border:1px solid #fff;box-shadow:0 12px 35px #a9658010;display:flex;flex-direction:column;justify-content:space-between}
+.memory .emoji{font-size:2rem}.memory h3{margin:14px 0 7px}.memory p{margin:0;color:#896d7a;line-height:1.6;font-size:.94rem}
+.letter-box{max-width:700px;margin:auto;background:#fffdfd;border:1px solid #ffe0ea;border-radius:28px;padding:clamp(24px,5vw,42px);box-shadow:0 18px 60px #b55d7b14;position:relative}
+.letter-box:before{content:"";position:absolute;inset:10px;border:1px dashed #f8c4d5;border-radius:20px;pointer-events:none}
+.letter-content{position:relative;line-height:1.9;color:#775967;font-size:1.02rem}
+.letter-content strong{color:#d95183}
+.signoff{font-family:Georgia,serif;font-style:italic;font-size:1.35rem;color:#dc5c8b;margin-top:22px}
+.center{text-align:center;margin-top:28px}
+footer{text-align:center;padding:30px 18px 45px;color:#a18190;font-size:.85rem}
+.modal{position:fixed;inset:0;background:#402432a8;display:none;place-items:center;padding:18px;z-index:10}
+.modal.show{display:grid;animation:fade .25s ease}
+.modal-card{width:min(470px,100%);background:var(--cream);border-radius:28px;padding:32px;text-align:center;box-shadow:0 25px 100px #32162444;animation:pop .3s ease}
+.modal-card .big{font-size:3.3rem}
+.modal-card h2{font-size:2rem}
+.modal-card p{line-height:1.8;color:#866876}
+.close{margin-top:12px;background:transparent;border:1px solid #f4bfd1;color:#a94e73;border-radius:999px;padding:11px 18px}
+@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes pop{from{transform:scale(.92)}to{transform:scale(1)}}
+.heart{position:fixed;bottom:-30px;z-index:20;pointer-events:none;animation:rise 3s linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media(max-width:650px){.memory-grid{grid-template-columns:1fr}.memory{min-height:145px}.f1{left:5%;top:12%}.f2{right:5%;top:15%}.f3{left:7%;bottom:9%}.f4{right:7%;bottom:9%}section{padding:55px 16px}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="glow one"></div><div class="glow two"></div>
+  <span class="floating f1">💗</span><span class="floating f2">✨</span><span class="floating f3">🌷</span><span class="floating f4">🦋</span>
+  <main class="card">
+    <div class="eyebrow">A tiny corner of the internet, just for you 💌</div>
+    <h1>Hey, <span>Bestie!</span></h1>
+    <p class="subtitle">I made you a little something, because some people make ordinary days feel a bit more special just by being in them.</p>
+    <button class="primary" onclick="openSurprise()">Tap for your surprise ✨</button>
+    <div class="tiny">made with a little extra care ♡</div>
+  </main>
+</header>
+
+<section id="friendship">
+  <div class="wrap">
+    <div class="section-tag">the little things</div>
+    <h2>Reasons you're special 🌸</h2>
+    <p class="lead">Not every special person needs a big reason. Sometimes it's the tiny everyday things that make a friendship unforgettable.</p>
+    <div class="memory-grid">
+      <article class="memory"><div class="emoji">😂</div><div><h3>The silly moments</h3><p>All the random talks, jokes, and moments that somehow become the best memories.</p></div></article>
+      <article class="memory"><div class="emoji">🫶🏻</div><div><h3>The comfort</h3><p>Being able to be yourself around someone is a kind of magic of its own.</p></div></article>
+      <article class="memory"><div class="emoji">🌷</div><div><h3>The little reminders</h3><p>A simple message, a laugh, or a check-in can make a day feel lighter.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="letter">
+  <div class="wrap">
+    <div class="section-tag">from my heart</div>
+    <h2>A little note for you 💌</h2>
+    <p class="lead">A few words for one very lovely human.</p>
+    <div class="letter-box">
+      <div class="letter-content">
+        Hey bestie,<br><br>
+        Just a little reminder that <strong>you matter</strong>, and your presence brings its own kind of happiness. Thank you for being someone I can laugh with, share random thoughts with, and make lovely memories with.<br><br>
+        I hope life gives you a thousand reasons to smile, people who treat your heart gently, and days that remind you how wonderful you are. Keep being your sweet, silly, amazing self. 💗
+        <div class="signoff">Always cheering for you, ♡</div>
+      </div>
+    </div>
+    <div class="center"><button class="primary" onclick="openSurprise()">One last little surprise 💝</button></div>
+  </div>
+</section>
+
+<footer>made with 💗 for a very special bestie · edit this page to make it truly yours</footer>
+
+<div class="modal" id="surprise" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeSurprise()">
+  <div class="modal-card">
+    <div class="big">💖</div>
+    <h2 id="modalTitle">A tiny reminder</h2>
+    <p>You don't have to be perfect to be appreciated. Just being you is already pretty wonderful. Never forget that, bestie. 🫶🏻</p>
+    <button class="close" onclick="closeSurprise()">Awww, okay 🥹</button>
+  </div>
+</div>
+<script>
+function openSurprise(){document.getElementById('surprise').classList.add('show');burstHearts();}
+function closeSurprise(){document.getElementById('surprise').classList.remove('show');}
+function burstHearts(){
+  const emojis=['💗','💖','💕','✨','🌸'];
+  for(let i=0;i<18;i++){
+    const el=document.createElement('span');el.className='heart';el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*100+'vw';el.style.fontSize=(16+Math.random()*20)+'px';el.style.animationDuration=(2.2+Math.random()*1.8)+'s';
+    document.body.appendChild(el);setTimeout(()=>el.remove(),4200);
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSurprise()});
+</script>
+</body>
+</html>
